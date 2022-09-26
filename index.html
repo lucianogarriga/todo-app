@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>To Do App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Montserrat+Subrayada:wght@700&family=Noto+Sans:wght@300;600&family=Outfit:wght@300;400;600&family=Rubik:wght@300;400;500&family=Space+Grotesk:wght@500&family=Staatliches&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
   <script src="script.js"></script>
 </head>
@@ -14,7 +18,26 @@
   <div class="background-image">
     <img src="./images/bg-desktop-dark.jpg">
   </div>
-
+  <div class="container">  
+    <div class="header">
+      <div class="title">
+        <h1>TODO</h1>
+      </div>
+      <div class="theme">
+        <img src="./images/icon-sun.svg" alt="">
+      </div>
+    </div>
+    <div class="new-todo">
+      <div class="check">
+        <div class="check-mark"></div>
+      </div>
+      <div class="new-todo-input">
+        <form>
+          <input type="text" placeholder="Create a new todo..."/>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
