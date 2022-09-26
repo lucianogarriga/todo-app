@@ -35,6 +35,7 @@ body{
 .header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .title{
     color: white;
@@ -43,5 +44,50 @@ body{
     letter-spacing: 8px;
 }
 .new-todo{
-    
+    background-color: hsl(235, 24%, 19%);
+    height: 70px;
+    margin-top: 50px;
+    border-radius: 6px;
+    display: flex; 
+}
+.check{ 
+    width: 70px; 
+    display: flex;
+    justify-content: center;
+    /* alinear horizontalmente */
+    align-items: center;
+    /* alinear verticalmente */
+}
+.check-mark{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid hsl(237,14%, 35%);
+    cursor:pointer;
+    transition: all 0.25s;
+}
+.check-mark:hover{
+    border-color: linear-gradient(135deg, #55DDFF, 0%, #C058F3, 100%);
+
+}
+.new-todo-input{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.new-todo-input form{
+    flex-grow: 1;
+}
+.new-todo-input input{
+    width: 100%;
+    padding: 10px 0px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    color: hsl(234, 39%, 85%);
+    font-size: 1em;
+}
+.new-todo-input::placeholder{
+    color: hsl(237,14%, 35%);
 }
