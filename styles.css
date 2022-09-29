@@ -65,9 +65,12 @@ body{
     border: 2px solid hsl(237,14%, 35%);
     cursor:pointer;
     transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .check-mark:hover{
-    border-color: linear-gradient(135deg, #55DDFF, 0%, #C058F3, 100%);
+    background: linear-gradient(135deg, #55DDFF, 0%, #C058F3, 100%);
 
 }
 .new-todo-input{
@@ -97,6 +100,15 @@ body{
     height: 70px;
     border-bottom: 1px solid hsl(237,14%, 26%);
     border-radius: 6px;
+    font-size: 18px;
+    transition: all 0.15s ease;
+    z-index: 1; 
+}
+.todo-item:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 3px 7px 0px hsl(235, 21%, 11%);
+    border-color: hsl(235, 24%, 19%); 
+    z-index: 10;
 }
 .todo-text{
     display: flex;
@@ -107,4 +119,11 @@ body{
 .todo-items-wrapper{
     margin-top: 30px;
     background-color: hsl(235, 24%, 19%);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0px 2px 30px 0px black;
+}
+.todo-items-info{
+    display: flex;
+    justify-content: space-between;
 }
