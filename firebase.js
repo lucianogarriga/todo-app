@@ -9,6 +9,6 @@ const firebaseConfig = {
   };
 
   // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.getAnalytics();
-  const db = getFirestore();
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  const db = getFirestore(app);
