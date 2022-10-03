@@ -4,148 +4,63 @@
     box-sizing: border-box;
 }
 
+img{
+    max-width: 100%;
+} 
+.flex-row{
+    display: flex;
+    flex: row rowrap;
+    align-items: center;
+}
+.theme-dark{
+    --bg-top-image: 0 0 url(./images/bg-desktop-dark.jpg) no-repeat;
+    --main-bg: hsl(235, 21%, 11%);
+    --todo-bg: hsl(235, 24%, 19%);
+    --todo-shadow: hsl(235, 21%, 11%);
+    --font-color: hsl(234, 39%, 85%);
+    --font-color-hover: #fff;
+}
+.theme-light{
+    --bg-top-image: 0 0 url(./images/bg-desktop-light.jpg) no-repeat;
+    --main-bg: hsl(0, 0%, 98%);
+    --todo-bg: hsl(0, 0%, 98%);
+    --todo-shadow: hsl(235, 19%, 35%);
+    --font-color: hsl(236, 9%, 61%);
+    --font-color-hover: hsl(235, 21%, 11%);
+}
 body{
-    display: flex;
-    justify-content: center;
+    font-size: 400px 18px/1;
     font-family: 'Noto Sans', sans-serif;
-    background-color: black;
-    font-size: 18px;
+    background: var(--bg-top-image);
+    background-color: var(--main-bg);
+    background-size: contain;
+    color: var(--font-color);
 }
-
-.background-image{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 350px;
-    z-index: -1;
+header, main{
+    max-width: 550px;
+    margin: 0 auto;
 }
-.background-image img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: left;
-}
-.container{
-    width: 100%;
-    max-width: 700px;
-    margin: 0 30px;
-    margin-top: 100px;
-}
-.header{
-    display: flex;
+header{
     justify-content: space-between;
-    align-items: center;
 }
-.title{
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 8px;
+h1{
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: fff;
+    letter-spacing: 0.5rem;
 }
-.new-todo{
-    background-color: hsl(235, 24%, 19%);
-    height: 70px;
-    margin-top: 50px;
-    border-radius: 6px;
-    display: flex; 
+.theme-block #theme{
+    display: none;
 }
-.check{ 
-    width: 70px; 
-    display: flex;
-    justify-content: center;
-    /* alinear horizontalmente */
-    align-items: center;
-    /* alinear verticalmente */
-}
-.check-mark{
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    border: 2px solid hsl(237,14%, 35%);
-    cursor:pointer;
-    transition: all 0.25s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.check-mark:hover{
-    background: linear-gradient(135deg, #55DDFF, 0%, #C058F3, 100%);
-
-}
-.new-todo-input{
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-}
-.new-todo-input form{
-    flex-grow: 1;
-}
-.new-todo-input input{
-    width: 100%;
-    padding: 10px 0px;
-    background-color: transparent;
-    border: none;
-    outline: none;
-    border-radius: 6px;
-    color: hsl(234, 39%, 85%);
-    font-size: 1em;
-}
-.new-todo-input::placeholder{
-    color: hsl(237,14%, 35%);
-}
-.todo-item{
-    display: flex;
-    width: 100%; 
-    height: 70px;
-    background-color: hsl(235, 24%, 19%);
-    border-bottom: 1px solid hsl(237,14%, 26%);
-    border-radius: 6px;
-    font-size: 18px;
-    transition: all 0.15s ease; 
-}
-.todo-item:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 3px 7px 0px hsl(235, 21%, 11%);
-    border-color: hsl(235, 24%, 19%);  
-}
-.todo-text{
-    display: flex;
-    align-items: center; 
-    color: hsl(234,39%, 85%);
-    font-weight: bold;
-}
-.todo-items-wrapper{
-    margin-top: 30px;
-    background-color: hsl(235, 24%, 19%);
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0px 2px 30px 0px black;
-}
-.todo-items-info{
-    display: flex;
-    height: 70px;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;  
-    color: hsl(233,14%, 35%);
-    padding: 0 30px;
-}
-.items-statuses{
-    display: flex;
-    justify-content: center;
-}
-.items-statuses span{
-    padding: 0 5px;
+.theme-block #theme + label::before{
+    content: '';
+    background: url(./images/icon-sun.svg);
+    display: block;
+    width: 26px;
+    height: 26px;
     cursor: pointer;
 }
-.items-statuses span:hover, 
-.items-statuses span.active, 
-.items-clear span:hover,
-.items-clear span.active{
-    color: hsl(220, 98%, 61%);
+.theme-block #theme:checked + label::before{
+    background: url(./images/icon-moon.svg);
 }
-.items-clear {
-    cursor: pointer;
-    text-align: end;
-}
+ 

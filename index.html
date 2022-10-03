@@ -9,154 +9,70 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&family=Montserrat+Subrayada:wght@700&family=Noto+Sans:wght@300;600&family=Outfit:wght@300;400;600&family=Rubik:wght@300;400;500&family=Space+Grotesk:wght@500&family=Staatliches&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="styles.css">
-  <script type="module"> 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js";
-    import { initializeApp } from "firebase/app";
-    import { getFirestore } from "firebase/firestore";    
-  </script> 
-  <script src="./firebase.js"></script>
-  <script src="./script.js"></script>
-</head>
-<body>
-  
-  <div class="background-image">
-    <img src="./images/bg-desktop-dark.jpg">
-  </div>
-  <div class="container">  
-    <div class="header">
-      <div class="title">
-        <h1>TODO</h1>
-      </div>
-      <div class="theme">
-        <img src="./images/icon-sun.svg" alt="">
-      </div>
-    </div>
-    <div class="new-todo">
-      <div class="check">
-        <div class="check-mark"></div>
-      </div>
-      <div class="new-todo-input">
-        <form onsubmit="addItem(event)">
-          <input id="todo-input" type="text" placeholder="Create a new todo..."/>
-        </form>
-      </div>
-    </div>
-    <div class="todo-items-wrapper">
-      <div class="todo-items">
-        <div class="todo-item">
-          <div class="check">
-            <div class="check-mark">
-              <img src="./images/icon-check.svg" alt="">
-            </div>
-          </div>
-          <div class="todo-text">
-            Cut the lawn
-          </div>
-        </div>
-        <div class="todo-item">
-          <div class="check">
-            <div class="check-mark">
-              <img src="./images/icon-check.svg" alt="">
-            </div>
-          </div>
-          <div class="todo-text">
-            Go to gym
-          </div>
-        </div>
-        <div class="todo-item">
-          <div class="check">
-            <div class="check-mark">
-              <img src="./images/icon-check.svg" alt="">
-            </div>
-          </div>
-          <div class="todo-text">
-            Do the homework
-          </div>
-        </div>
-        <div class="todo-item">
-          <div class="check">
-            <div class="check-mark">
-              <img src="./images/icon-check.svg" alt="">
-            </div>
-          </div>
-          <div class="todo-text">
-            Learn new language
-          </div>
-        </div>
-        <div class="todo-item">
-          <div class="check">
-            <div class="check-mark">
-              <img src="./images/icon-check.svg" alt="">
-            </div>
-          </div>
-          <div class="todo-text">
-            Practice code
-          </div>
-        </div>
-      </div>
 
-      <div class="todo-items-info">
-        <div class="items-left">
-          5 items left
-        </div>
-        <div class="items-statuses">
-          <span class="active">All</span>
-          <span>Active</span>
-          <span>Completed</span>
-        </div>
-        <div class="items-clear">
-          <span>Clear Completed</span>
-        </div>
-      </div>
+
+</head>
+<body class="theme-dark">
+  <header class="flex-row">
+    <h1>TODO</h1>
+    <div class="theme-block">
+      <input type="checkbox" name="theme" id="theme">
+      <label for="theme"></label>
     </div>
-  </div>
+  </header>
+
+  <main>
+    <div class="add-new-item">
+      <span></span>
+      <input type="text" placeholder="Create a new todo" name="addItem" id="addItem">
+    </div>
+
+    <section class="content">
+      <ul>
+        <li>
+          <label for="" class="list-item">
+            <input type="checkbox" name="todoItem" checked>
+            <span class="checkmark"></span>
+            <span class="text">Text 1</span>
+          </label> 
+        </li>
+        <li>
+          <label for="" class="list-item"></label>
+            <input type="checkbox" name="todoItem">
+            <span class="checkmark"></span>
+            <span class="text">Text 2</span>
+          </label> 
+        </li>
+        <li>
+          <label for="" class="list-item"></label>
+            <input type="checkbox" name="todoItem">
+            <span class="checkmark"></span>
+            <span class="text">Text 3</span>
+          </label> 
+        </li>
+      </ul>
+    </section>
+    <div class="botton-items flex-row">
+      <div class="items-left"><span>2</span> Items left</div>
+      <div class="filter flex-row">
+        <label>
+          <input type="radio" name="filter" id="all" checked>
+          <span>All</span>
+        </label>
+        <label>
+          <input type="radio" name="filter" id="active" checked>
+          <span>Active</span>
+        </label>
+        <label>
+          <input type="radio" name="filter" id="completed" checked>
+          <span>Completed</span>
+        </label>
+      </div>
+      <span class="clear">Clear completed</span>
+    </div>
+  </main>
+
+  <script src="./script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Todo app</title>
-
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Todo
-
- items left
-
-  All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
-</html> -->
