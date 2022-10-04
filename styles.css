@@ -63,4 +63,59 @@ h1{
 .theme-block #theme:checked + label::before{
     background: url(./images/icon-moon.svg);
 }
- 
+.add-new-item{
+    background: var(--todo-bg);
+    height: 55px;
+    border-radius: 6px;
+    margin: 0 0 15px;
+    padding: 7px;
+}
+.add-new-item #addItem{
+    background: transparent;
+    color: var(--font-color);
+    border: 0;
+    outline: 0;
+    width: 80%;
+    height: 60px;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
+}
+.add-new-item span{
+    width: 25px;
+    height: 25px;
+    border: 1px solid var(--font-color);
+    border-radius: 50%;
+    margin: 5px;
+}
+.content {
+    background: var(--todo-bg);
+    border-radius: 5px;
+    box-shadow: 0 5px 25px -12px var(--todo-shadow);
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    padding: 0;
+    min-height: 65px;
+    border-bottom: 1px solid var(--font-color);
+    border-radius: 5px;
+    align-items: center; 
+}
+ul li input[type="checkbox"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+ul li label{
+    position: relative;
+    padding: 0 0 0 35px;
+}
+.checkmark{
+    position: absolute;
+}
