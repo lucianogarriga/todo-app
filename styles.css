@@ -104,6 +104,7 @@ ul li{
     border-bottom: 1px solid var(--font-color);
     border-radius: 5px;
     align-items: center; 
+    position: relative;
 }
 ul li input[type="checkbox"]{
     position: absolute;
@@ -115,7 +116,70 @@ ul li input[type="checkbox"]{
 ul li label{
     position: relative;
     padding: 0 0 0 35px;
+    cursor: pointer;
 }
 .checkmark{
     position: absolute;
+    top: -5px;
+    left: 0;
+    height: 25px;
+    width: 25px;
+}
+ul li input[type="checkbox"] ~ .checkmark {
+    border: 1px solid var(--font-color);
+    border-radius: 50px;
+}
+ul li input[type="checkbox"] ~ .checkmark:hover{
+    border: 0;
+    padding: 1px;
+    background: linear-gradient(100deg, hsl(192, 100%, 67%), hsl(280, 87%,65%) );
+}
+/* ul li input[type="checkbox"] ~ .checkmark:hover::before{
+    content: '';
+    width: 23px;
+    height: 23px;
+    border-radius: 50%;
+    background: var(--todo-bg);
+    display: block;
+} */
+ul li input[type="checkbox"]:checked ~ .checkmark{
+    background: center url(./images/icon-check.svg)no-repeat, linear-gradient(100deg, hsl(192, 100%, 67%), hsl(280, 87%,65%) );
+}
+ul li input[type="checkbox"]:checked ~ .text{
+    text-decoration: line-through;
+}
+.remove{
+    background: url(./images/icon-cross.svg) no-repeat;
+    width: 18px;
+    height: 18px;
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    right: 16px;
+    top: 24px;
+}
+ul li:hover .remove{
+    display: block;
+    color: var(--font-color);
+}
+.bottom-items{
+    justify-content: space-between;
+    height: 65px;
+    font-size: 1rem;
+}
+.filter input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+.filter input[type="radio"]:checked ~ span{
+    color: hsl(221, 62%, 52%);
+}
+.filter label{
+    cursor: pointer;
+}
+.filter label:hover{
+    color: var(--font-color-hover);
 }
