@@ -1,11 +1,5 @@
- 
-function addItem(event){
-    event.preventDefault();
-    let text = document.getElementById('todo-input');
-    
-    db.collection("todo-items").add({
-        text: text.value,
-        status: "active"
-    })
-    text.value = '';
-}
+const theme = document.getElementById('theme');
+
+theme.addEventListener('click', ()=>{
+    document.querySelector('body').classList = [theme.checked ? 'theme-light' : 'theme-dark'];
+})
