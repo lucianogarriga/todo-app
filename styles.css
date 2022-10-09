@@ -96,6 +96,7 @@ h1{
     border-radius: 5px;
     box-shadow: 0 5px 25px -12px var(--todo-shadow);
     margin: 5px;
+    color: var(--font-color);
 }
 ul{
     list-style-type: none;
@@ -122,10 +123,14 @@ ul li label{
 }
 .checkmark{
     position: absolute;
-    top: -5px;
+    top: 10px;
     left: 0;
     height: 25px;
     width: 25px;
+}
+.text{
+    position: relative; 
+    top: 12px;
 }
 ul li input[type="checkbox"] ~ .checkmark {
     border: 1px solid var(--font-color);

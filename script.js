@@ -1,6 +1,7 @@
 const theme = document.getElementById('theme');
 const newItemInput = document.getElementById('addItem');
-const todoList = document.querySelector('.content ul')
+const todoList = document.querySelector('.content ul');
+const itemsLeft = document.querySelector('.items-left span');
 
 theme.addEventListener('click', ()=>{
     document.querySelector('body').classList = [theme.checked ? 'theme-light' : 'theme-dark'];
@@ -8,7 +9,8 @@ theme.addEventListener('click', ()=>{
 
 newItemInput.addEventListener('keypress', (e) =>{
     if (e.charCode === 13 && newItemInput.value.length > 0){
-        createNewTodoItem(newItemInput.value)
+        createNewTodoItem(newItemInput.value);
+        newItemInput.value = '';
     }
 })
 
@@ -25,4 +27,9 @@ newItemInput.addEventListener('keypress', (e) =>{
     `;
 
     todoList.append(element); 
+    updateItemsCount(1);
+}
+
+function updateItemsCount(number){
+    itemsLeft.innerText = +itemsLeft.innerText + number;
 }
