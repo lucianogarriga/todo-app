@@ -33,3 +33,13 @@ newItemInput.addEventListener('keypress', (e) =>{
 function updateItemsCount(number){
     itemsLeft.innerText = +itemsLeft.innerText + number;
 }
+function removeTodoItem(element){
+    element.remove();
+    updateItemsCount(-1);
+}
+todoList.addEventListener('click', (e) =>{
+    console.log(e);
+    if(e.target.classList.contains('remove')){
+        removeTodoItem(e.target.parentElement);
+    }
+})
