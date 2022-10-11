@@ -40,11 +40,10 @@ body{
 header, main{
     max-width: 550px;
     margin: 0 auto;
-    
 }
 header{
     justify-content: space-between; 
-    padding-top: 50px;
+    padding-top: 25px;
 }
 h1{
     font-weight: 700;
@@ -72,6 +71,7 @@ h1{
     border-radius: 6px;
     padding: 8px;
     margin: 5px; 
+    box-shadow: 0 10px 40px -10px var(--todo-shadow);
 }
 .add-new-item #addItem{
     background: transparent;
@@ -157,22 +157,22 @@ ul li input[type="checkbox"]:checked ~ .text{
 .remove{
     background: url(./images/icon-cross.svg) no-repeat;
     width: 18px;
-    height: 18px;
-    display: none;
-    cursor: pointer;
+    height: 18px; 
     position: absolute;
     right: 16px;
     top: 24px;
 }
+.remove:hover{
+    cursor: pointer; 
+}
 ul li:hover .remove, .clear{
-    display: block;
-    color: var(--font-color);
+    display: block; 
 }
 .botton-items{
     justify-content: space-between;
     height: 65px;
     font-size: 14px;
-    margin: 5px;
+    margin: 30px 5px;
     font-weight: bold;
     letter-spacing: 1px;
 }
