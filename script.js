@@ -43,3 +43,8 @@ todoList.addEventListener('click', (e) =>{
         removeTodoItem(e.target.parentElement);
     }
 })
+document.querySelector('.clear').addEventListener('click', ()=>{
+    document.querySelectorAll('.list-item input[type="checkbox"]').forEach(item =>{
+        removeTodoItem(item.closest('li'));
+    })
+})
